@@ -1,0 +1,12 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "BS Employee",
+  "SystemName": "Widgets.BSEmployee",
+  "Version": "1.49",
+  "SupportedVersions": [ "4.50" ],
+  "Author": "Sohag",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.BSEmployee.dll",
+  "Description": "This BSEmployee plugin are  used for showing employee List"
+
+}

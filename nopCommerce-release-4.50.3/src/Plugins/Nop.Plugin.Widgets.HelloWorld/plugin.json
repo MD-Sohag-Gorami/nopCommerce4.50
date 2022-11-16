@@ -1,0 +1,12 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "Hello World",
+  "SystemName": "Widgets.HelloWorld",
+  "Version": "1.49",
+  "SupportedVersions": [ "4.50" ],
+  "Author": "Sohag",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.HelloWorld.dll",
+  "Description": "This is used for tesing purpose"
+ 
+}

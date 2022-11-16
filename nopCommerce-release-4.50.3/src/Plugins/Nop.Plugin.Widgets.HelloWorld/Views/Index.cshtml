@@ -1,0 +1,11 @@
+﻿@model string
+
+
+<div class="text-center">
+    <h1>Demo Page </h1>
+    <h2>Plugin  Name : @Model</h2>
+    <br />
+    <h1 class="display-4">View component</h1>
+    <br />
+      @await Component.InvokeAsync("Widget", new { widgetZone = "HelloWorldPageBottom" })
+</div>

@@ -1,0 +1,14 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "Test Widgets",
+  "SystemName": "Widgets.TestWidgets",
+  "Version": "1.49",
+  "SupportedVersions": [ "4.50" ],
+  "Author": "Sohag",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.TestWidgets.dll",
+  "Description": "This plugin is used for tesint purpose",
+  "LimitedToStores": "",
+  "LimitedToCustomerRoles": "",
+  "DependsOnSystemNames": ""
+}

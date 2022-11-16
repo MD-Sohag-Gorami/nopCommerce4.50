@@ -1,0 +1,56 @@
+﻿@await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HeaderBefore })
+
+<div class="navbar fixed-top header-upper" role="navigation">
+    <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                @await Component.InvokeAsync("HeaderLinks")
+                @await Component.InvokeAsync("FlyoutShoppingCart")
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        @await Component.InvokeAsync("TaxTypeSelector")
+                    </li>
+                    <li class="nav-item">
+                        @await Component.InvokeAsync("CurrencySelector")
+                    </li>
+                    <li class="nav-item">
+                        @await Component.InvokeAsync("LanguageSelector")
+                    </li>
+                    <li class="nav-item">
+                        @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HeaderSelectors })
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        @*<div class="header-selectors-wrapper">
+            @await Component.InvokeAsync("TaxTypeSelector")
+            @await Component.InvokeAsync("CurrencySelector")
+            @await Component.InvokeAsync("LanguageSelector")
+            @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HeaderSelectors })
+        </div>
+        <div class="header-links-wrapper">
+            @await Component.InvokeAsync("HeaderLinks")
+            @await Component.InvokeAsync("FlyoutShoppingCart")
+        </div>*@
+    </div>
+</div>
+<div class="container">
+    @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HeaderMiddle })
+    <div class="row header-lower">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+            <div class="header-logo">
+                @await Component.InvokeAsync("Logo")
+            </div>
+        </div>
+        
+        <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 search-box store-search-box">
+                @await Component.InvokeAsync("SearchBox")
+            </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HeaderAfter })
+</div>

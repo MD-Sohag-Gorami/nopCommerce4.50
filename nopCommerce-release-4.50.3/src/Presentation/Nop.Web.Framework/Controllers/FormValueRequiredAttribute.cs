@@ -16,7 +16,6 @@ namespace Nop.Web.Framework.Controllers
         private readonly string[] _submitButtonNames;
         private readonly FormValueRequirement _requirement;
         private readonly bool _validateNameOnly;
-
         /// <summary>
         /// Ctor
         /// </summary>
