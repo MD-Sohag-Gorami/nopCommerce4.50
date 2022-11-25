@@ -7,12 +7,17 @@ using Nop.Core;
 
 namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Domain
 {
-    public partial class BSEmployee : BaseEntity
+    public partial class Employee : BaseEntity
     {
-        public int EmployeeId { get; set; }
+       
         public string EmployeeName { get; set; }
         public string EmployeeBsId { get; set; }
-        public int   Designation { get; set; }
+        public int DesignationId { get; set; }
+        public Designation Designation
+        {
+            get => (Designation)DesignationId;
+            set => DesignationId = (int)value;
+        }
 
     }
 }

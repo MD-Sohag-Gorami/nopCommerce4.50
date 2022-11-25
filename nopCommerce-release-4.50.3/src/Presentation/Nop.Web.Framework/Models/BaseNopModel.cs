@@ -31,6 +31,7 @@ namespace Nop.Web.Framework.Models
         /// <remarks>Developers can override this method in custom partial classes in order to add some custom model binding</remarks>
         public virtual void BindModel(ModelBindingContext bindingContext)
         {
+
         }
 
         /// <summary>
@@ -39,6 +40,7 @@ namespace Nop.Web.Framework.Models
         /// <remarks>Developers can override this method in custom partial classes in order to add some custom initialization code to constructors</remarks>
         protected virtual void PostInitialize()
         {
+
         }
 
         #endregion
