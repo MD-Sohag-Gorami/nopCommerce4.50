@@ -52,7 +52,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
             return Json(model);
         }
         #endregion
-        #region Create
+        #region Create / Delete/Edit
         public  async Task<IActionResult> Create()
         {
             //prepare model

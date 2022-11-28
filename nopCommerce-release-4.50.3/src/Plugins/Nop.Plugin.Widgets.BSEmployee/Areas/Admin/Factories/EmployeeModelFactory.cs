@@ -15,12 +15,16 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Factories
 {
     public class EmployeeModelFactory : IEmployeeModelFactory
     {
+        #region Ctor
         private readonly IEmployeeService _employeeService;
-
+        #endregion
+        #region Ctor
         public EmployeeModelFactory(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
         }
+        #endregion
+        #region Methods
         public async Task<EmployeeModel> PrepareEmployeeModelAsync(EmployeeModel employeeModel, Employee employee)
         {
             var model = new EmployeeModel();
@@ -116,5 +120,6 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Factories
             EmployeeModel employee = new EmployeeModel();
             return employee;
         }
+        #endregion
     }
 }

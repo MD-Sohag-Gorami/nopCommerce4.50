@@ -13,10 +13,12 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services
 {
     public class EmployeeService : IEmployeeService
     {
+        #region Fileds
         private readonly IRepository<Employee> _employeeRepository;
         private readonly IRepository<LocalizedProperty> _localizedPropertyRepository;
         private readonly IWorkContext _workContext;
-
+        #endregion
+        #region Ctor
         public EmployeeService(IRepository<Employee> employeeRepository,
                                IRepository<LocalizedProperty> localizedPropertyRepository,
                               IWorkContext workContext)
@@ -25,6 +27,8 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services
             _localizedPropertyRepository = localizedPropertyRepository;
             _workContext = workContext;
         }
+        #endregion
+        #region Methods
         public async Task<IPagedList<Employee>> GetAllEmployeesAsync(int pageIndex = 0, int pageSize = int.MaxValue)
         {
             var query = _employeeRepository.Table;
@@ -71,7 +75,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services
 
             // return await employeeQuery.OrderBy(_localizedPropertyRepository, await _workContext.GetWorkingLanguageAsync(), orderBy).ToPagedListAsync(pageIndex, pageSize);
         }
-
+        #endregion
 
     }
 }
