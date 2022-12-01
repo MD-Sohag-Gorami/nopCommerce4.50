@@ -48,6 +48,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services
         public async Task InsertEmployeeAsync(Employee employee)
         {
             await _employeeRepository.InsertAsync(employee);
+            var employeeId = employee.Id;
 
         }
 

@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nop.Core;
+using Nop.Core.Domain.ScheduleTasks;
 using Nop.Services.Cms;
 using Nop.Services.Localization;
 using Nop.Services.Plugins;
+using Nop.Services.ScheduleTasks;
 using Nop.Web.Framework.Infrastructure;
 using Nop.Web.Framework.Menu;
+
 
 namespace Nop.Plugin.Widgets.BSEmployee
 {
@@ -16,11 +19,14 @@ namespace Nop.Plugin.Widgets.BSEmployee
     {
         private readonly IWebHelper _webHelper;
         private readonly ILocalizationService _localizationService;
+        private readonly IScheduleTaskService _scheduleTaskService;
 
-        public BSEmployeePlugin(IWebHelper webHelper,ILocalizationService localizationService)
+        public BSEmployeePlugin(IWebHelper webHelper,ILocalizationService localizationService,
+                                IScheduleTaskService scheduleTaskService)
         {
             _webHelper = webHelper;
             _localizationService = localizationService;
+            _scheduleTaskService = scheduleTaskService;
         }
         public bool HideInWidgetList => false;
 
@@ -33,13 +39,13 @@ namespace Nop.Plugin.Widgets.BSEmployee
         {
             return Task.FromResult<IList<string>>(new List<string> { PublicWidgetZones.HomepageTop});
         }
-
+        //Menu te kichu add korte chaile 
         public async Task ManageSiteMapAsync(SiteMapNode rootNode)
         {
             var bSEmployee = new SiteMapNode()
             {
                 Title = "BS Employee",
-                Url = $"{_webHelper.GetStoreLocation()}Admin/BSEmployee/List",
+                Url = $"{_webHelper.GetStoreLocation()}Admin/BSEmployee/List",// Folder,controller,Action name
                 Visible = true,
                 IconClass = "far fa-dot-circle",
                 SystemName = "BSEmployee"
@@ -77,6 +83,27 @@ namespace Nop.Plugin.Widgets.BSEmployee
 
 
             });
+
+            var bsEmployeeScheduleTask = new ScheduleTask()
+            {
+                Type = "Nop.Plugin.Widgets.BSEmployee.Tasks.BSEmployeeScheduleTask",//BSEmployeeScheduleTask class er (namespace dot class name)
+                //namespace = "Nop.Plugin.Widgets.BSEmployee.Tasks" 
+                Name = "Send infromtation",
+                Seconds = 90,
+                Enabled = true,
+                StopOnError = false,
+
+            };
+           await _scheduleTaskService.InsertTaskAsync(bsEmployeeScheduleTask);
+            var bsEmployeeEmailScheduleTask = new ScheduleTask()
+            {
+                Type = "Nop.Plugin.Widgets.BSEmployee.Tasks.BSEmployeeEmailScheduleTask",
+                Name = "Send Email",
+                Seconds = 80,
+                Enabled = true,
+                StopOnError = false,
+            };
+            await _scheduleTaskService.InsertTaskAsync(bsEmployeeEmailScheduleTask);
 
             await base.InstallAsync();
         }

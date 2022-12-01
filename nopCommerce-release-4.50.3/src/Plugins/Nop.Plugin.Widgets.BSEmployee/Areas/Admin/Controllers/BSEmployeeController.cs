@@ -29,8 +29,10 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
         {
             _employeeModelFactory = employeeModelFactory;
             _permissionService = permissionService;
+
             _employeeService = employeeService;
         }
+        //Hello
         #endregion
         #region List
         public  async Task<IActionResult> List()
@@ -52,7 +54,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
             return Json(model);
         }
         #endregion
-        #region Create / Delete/Edit
+        #region Create/Delete/Edit
         public  async Task<IActionResult> Create()
         {
             //prepare model
