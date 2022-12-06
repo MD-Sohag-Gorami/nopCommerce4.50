@@ -15,7 +15,7 @@ using Nop.Web.Framework.Mvc.Filters;
 
 namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
 {
-    public class BSEmployeeController: BaseAdminController
+    public class BSEmployeeController : BaseAdminController
     {
         #region Fields
         private readonly IEmployeeModelFactory _employeeModelFactory;
@@ -35,7 +35,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
         //Hello
         #endregion
         #region List
-        public  async Task<IActionResult> List()
+        public async Task<IActionResult> List()
         {
 
             //prepare model
@@ -45,9 +45,9 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public  async Task<IActionResult> EmployeeList(EmployeeSearchModel searchModel)
+        public async Task<IActionResult> EmployeeList(EmployeeSearchModel searchModel)
         {
-            
+
             //prepare model
             var model = await _employeeModelFactory.PrepareEmployeeListModelAsync(searchModel);
 
@@ -55,18 +55,18 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
         }
         #endregion
         #region Create/Delete/Edit
-        public  async Task<IActionResult> Create()
+        public async Task<IActionResult> Create()
         {
             //prepare model
-            var model = await _employeeModelFactory.PrepareEmployeeModelAsync(new EmployeeModel(), null); 
+            var model = await _employeeModelFactory.PrepareEmployeeModelAsync(new EmployeeModel(), null);
             ;
 
             return View("~/Plugins/Widgets.BSEmployee/Areas/Admin/Views/BSEmployee/Create.cshtml", model);
-            
+
         }
 
         [HttpPost, ParameterBasedOnFormName("save-continue", "continueEditing")]
-        public  async Task<IActionResult> Create(EmployeeModel model, bool continueEditing)
+        public async Task<IActionResult> Create(EmployeeModel model, bool continueEditing)
         {
 
 
@@ -83,6 +83,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
 
                 await _employeeService.InsertEmployeeAsync(employee);
 
+
             }
             return RedirectToAction("List");
         }
@@ -91,21 +92,22 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
         {
             var employee = await _employeeService.GetEmployeeByIdAsync(id);
 
-            
-            if(employee == null) return RedirectToAction("List");
+
+            if (employee == null)
+                return RedirectToAction("List");
             await _employeeService.DeleteEmployeeByIdAsync(employee);
             return RedirectToAction("List");
         }
 
         [HttpPost]
-        public  async Task<IActionResult> DeleteSelected(ICollection<int> selectedIds)
+        public async Task<IActionResult> DeleteSelected(ICollection<int> selectedIds)
         {
-         
+
 
             if (selectedIds == null || selectedIds.Count == 0)
                 return NoContent();
             selectedIds.ToArray();
-            foreach(var id in selectedIds)
+            foreach (var id in selectedIds)
             {
                 var employee = await _employeeService.GetEmployeeByIdAsync(id);
                 if (employee == null)
@@ -118,7 +120,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
 
         public virtual async Task<IActionResult> Edit(int id)
         {
-            
+
 
             //try to get a category with the specified id
             var employee = await _employeeService.GetEmployeeByIdAsync(id);
@@ -152,10 +154,10 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
                     EmployeeName = model.EmployeeName,
                     DesignationId = model.DesignationId,
                 };
-              
+
                 await _employeeService.UpdateEmployeeAsync(employee);
 
-              
+
                 if (!continueEditing)
                     return RedirectToAction("List");
 

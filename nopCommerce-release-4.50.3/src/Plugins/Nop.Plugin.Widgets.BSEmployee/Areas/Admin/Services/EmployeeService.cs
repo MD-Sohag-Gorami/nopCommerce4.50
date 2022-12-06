@@ -17,15 +17,19 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services
         private readonly IRepository<Employee> _employeeRepository;
         private readonly IRepository<LocalizedProperty> _localizedPropertyRepository;
         private readonly IWorkContext _workContext;
+        private readonly IEmployeeEmailService _employeeEmailService;
         #endregion
         #region Ctor
         public EmployeeService(IRepository<Employee> employeeRepository,
                                IRepository<LocalizedProperty> localizedPropertyRepository,
-                              IWorkContext workContext)
+                               IWorkContext workContext,
+                               IEmployeeEmailService employeeEmailService
+                              )
         {
             _employeeRepository = employeeRepository;
             _localizedPropertyRepository = localizedPropertyRepository;
             _workContext = workContext;
+            _employeeEmailService = employeeEmailService;
         }
         #endregion
         #region Methods
@@ -49,6 +53,9 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services
         {
             await _employeeRepository.InsertAsync(employee);
             var employeeId = employee.Id;
+            var languageId = ( await _workContext.GetWorkingLanguageAsync()).Id ;
+            await _employeeEmailService.SendBSEmployeeCreateNotificationAsync(employee, languageId);
+
 
         }
 
@@ -62,7 +69,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services
 
            )
         {
-            //some databases don't support int.MaxValue
+           
             if (pageSize == int.MaxValue)
                 pageSize = int.MaxValue - 1;
 

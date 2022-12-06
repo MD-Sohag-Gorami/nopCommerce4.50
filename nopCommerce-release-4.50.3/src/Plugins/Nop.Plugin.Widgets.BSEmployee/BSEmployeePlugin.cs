@@ -68,6 +68,7 @@ namespace Nop.Plugin.Widgets.BSEmployee
             await _localizationService.AddOrUpdateLocaleResourceAsync(new Dictionary<string, string>
             {
                 ["Plugins.Widgets.Employee.EmployeeName"] = "Enter Employee Name",
+                ["Plugins.Widgets.Employee.EmployeeName.Hint"] = "Enter Employee Name",
                 ["Plugins.Widgets.Employee.EmployeeBSId"] = "Enter Employee BS Id",
                 ["Plugins.Widgets.Employee.EmployeeDesingation"] = "Select Employee Designation",
                 ["Plugins.Widgets.Employee.Admin.EmployeeList.PageTitle"] = "BS Employee",

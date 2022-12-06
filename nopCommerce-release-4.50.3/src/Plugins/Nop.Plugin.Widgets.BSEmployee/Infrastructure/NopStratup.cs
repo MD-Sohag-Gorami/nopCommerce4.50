@@ -25,6 +25,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Infrastructure
         {
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IEmployeeModelFactory, EmployeeModelFactory>();
+            services.AddScoped<IEmployeeEmailService, EmployeeEmailService>();
             
 
         }
