@@ -28,7 +28,6 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Factories
         public async Task<EmployeeModel> PrepareEmployeeModelAsync(EmployeeModel employeeModel, Employee employee)
         {
             var model = new EmployeeModel();
-
             if (employee != null)
             {
                 model.Id = employee.Id;

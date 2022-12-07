@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Nop.Web.Framework.Models;
+using Nop.Web.Framework.Mvc.ModelBinding;
 
 namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Models
 {
@@ -14,7 +15,9 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Models
         {
             AvailableDesignation = new List<SelectListItem>();
         }
+        [NopResourceDisplayName("Plugins.Widgets.Employee.EmployeeSearchModel.EmployeeName")]
         public string EmployeeName { get; set; }
+        [NopResourceDisplayName("Plugins.Widgets.Employee.EmployeeSearchModel.EmployeeDesignation")]
         public int EmployeeDesignation { get; set; }
         public IList<SelectListItem> AvailableDesignation { get; set; }
     }

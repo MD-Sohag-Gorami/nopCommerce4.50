@@ -20,13 +20,13 @@ namespace Nop.Plugin.Widgets.FacebookPixel.Infrastructure
         {
             services.AddScoped<FacebookPixelService>();
         }
-
         /// <summary>
         /// Configure the using of added middleware
         /// </summary>
         /// <param name="application">Builder for configuring an application's request pipeline</param>
         public void Configure(IApplicationBuilder application)
         {
+
         }
 
         /// <summary>

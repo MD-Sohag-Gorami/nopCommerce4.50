@@ -67,10 +67,12 @@ namespace Nop.Plugin.Widgets.BSEmployee
         {
             await _localizationService.AddOrUpdateLocaleResourceAsync(new Dictionary<string, string>
             {
-                ["Plugins.Widgets.Employee.EmployeeName"] = "Enter Employee Name",
-                ["Plugins.Widgets.Employee.EmployeeName.Hint"] = "Enter Employee Name",
-                ["Plugins.Widgets.Employee.EmployeeBSId"] = "Enter Employee BS Id",
-                ["Plugins.Widgets.Employee.EmployeeDesingation"] = "Select Employee Designation",
+                ["Plugins.Widgets.Employee.EmployeeName"] = "Name",
+                ["Plugins.Widgets.Employee.EmployeeName.Hint"] = "The Employee Name",
+                ["Plugins.Widgets.Employee.EmployeeBSId"] = "BS Id",
+                ["Plugins.Widgets.Employee.EmployeeBSId.Hint"] = "BS Employeee BSId",
+                ["Plugins.Widgets.Employee.EmployeeDesingation"] = "Designation",
+                ["Plugins.Widgets.Employee.EmployeeDesingation.Hint"] = "The BS Employee Designation",
                 ["Plugins.Widgets.Employee.Admin.EmployeeList.PageTitle"] = "BS Employee",
                 ["Plugins.Widgets.Employee.Admin.EmployeeList"] = "BS Employee",
                 ["Plugins.Widgets.Employee.Admin.Fields.EmployeeName"] = "Name",
@@ -80,9 +82,10 @@ namespace Nop.Plugin.Widgets.BSEmployee
                 ["Plugins.Widgets.Employee.Admin.EmployeeList.BackToList"] = "Back to employee list",
                 ["Plugins.Widgets.Employee.Admin.EditEmployeeDetails"] = "Edit employee details",
                 ["Plugins.Widgets.Employee.Admin.Employees.Info"] = "Employee Details",
-               
-
-
+                ["Plugins.Widgets.Employee.EmployeeSearchModel.EmployeeName"] = "Employee Name",
+                ["Plugins.Widgets.Employee.EmployeeSearchModel.EmployeeName.Hint"] = "Seachr by a Employee Name",
+                ["Plugins.Widgets.Employee.EmployeeSearchModel.EmployeeDesignation"] = "Employee Designation",
+                ["Plugins.Widgets.Employee.EmployeeSearchModel.EmployeeDesignation.Hint"] = "Search By a Employee Designation",
             });
 
             var bsEmployeeScheduleTask = new ScheduleTask()
