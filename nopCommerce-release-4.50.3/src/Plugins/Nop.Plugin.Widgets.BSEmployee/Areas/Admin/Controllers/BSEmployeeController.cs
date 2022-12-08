@@ -29,10 +29,8 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
         {
             _employeeModelFactory = employeeModelFactory;
             _permissionService = permissionService;
-
             _employeeService = employeeService;
         }
-        //Hello
         #endregion
         #region List
         public async Task<IActionResult> List()
@@ -72,14 +70,14 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                var employee = model.ToEntity<Employee>();
+                //var employee = model.ToEntity<Employee>();
 
-               /* var employee = new Employee()
+                var employee = new Employee()
                 {
                     EmployeeBsId = model.EmployeeBsId,
                     EmployeeName = model.EmployeeName,
                     DesignationId = model.DesignationId,
-                };*/
+                };
 
                 await _employeeService.InsertEmployeeAsync(employee);
 
@@ -146,14 +144,14 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
 
-                var employee = model.ToEntity<Employee>();
-                /* var employee = new Employee()
+                //var employee = model.ToEntity<Employee>();
+                 var employee = new Employee()
                  {
                      Id = model.Id,
                      EmployeeBsId = model.EmployeeBsId,
                      EmployeeName = model.EmployeeName,
                      DesignationId = model.DesignationId,
-                 };*/
+                 };
 
                 await _employeeService.UpdateEmployeeAsync(employee);
 

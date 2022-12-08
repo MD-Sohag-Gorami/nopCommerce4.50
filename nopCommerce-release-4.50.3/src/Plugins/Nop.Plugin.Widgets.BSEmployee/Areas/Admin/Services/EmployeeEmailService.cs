@@ -59,6 +59,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services
 
             //tokens
             var commonTokens = new List<Token>();
+            //await _messageTokenProvider.AddOrderTokensAsync(commonTokens, employee, languageId);
 
 
             return await messageTemplates.SelectAwait(async messageTemplate =>
@@ -67,7 +68,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services
                 var emailAccount = await GetEmailAccountOfMessageTemplateAsync(messageTemplate, languageId);
 
                 var tokens = new List<Token>(commonTokens);
-                await _messageTokenProvider.AddStoreTokensAsync(tokens, store, emailAccount);
+                
 
                 //event notification
                 await _eventPublisher.MessageTokensAddedAsync(messageTemplate, tokens);
@@ -83,7 +84,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services
 
         protected virtual async Task<int> EnsureLanguageIsActiveAsync(int languageId, int storeId)
         {
-            //load language by specified ID
+          
             var language = await _languageService.GetLanguageByIdAsync(languageId);
 
             if (language == null || !language.Published)

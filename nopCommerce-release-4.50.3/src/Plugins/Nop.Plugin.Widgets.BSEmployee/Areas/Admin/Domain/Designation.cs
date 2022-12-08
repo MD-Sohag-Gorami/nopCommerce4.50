@@ -13,7 +13,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Domain
         TechLead,
         SeniorSoftwareEngineer,
         SoftwareEngineer,
-        AssociatgeSoftware,
+        AssociateSoftwareEngineer,
         SoftwareEngineerTrainee,
     }
 }

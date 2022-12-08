@@ -86,6 +86,16 @@ namespace Nop.Plugin.Widgets.BSEmployee
                 ["Plugins.Widgets.Employee.EmployeeSearchModel.EmployeeName.Hint"] = "Seachr by a Employee Name",
                 ["Plugins.Widgets.Employee.EmployeeSearchModel.EmployeeDesignation"] = "Employee Designation",
                 ["Plugins.Widgets.Employee.EmployeeSearchModel.EmployeeDesignation.Hint"] = "Search By a Employee Designation",
+
+                // for enum 
+                ["Enums.Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Domain.Designation.SoftwareEngineerTrainee"] = "Software Engineer Trainee",
+                ["Enums.Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Domain.Designation.SoftwareEngineer"] = "Software Engineer",
+                ["Enums.Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Domain.Designation.HeadOfNopStation"] = "Head Of Nop Station",
+                ["Enums.Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Domain.Designation.ProjectManager"] = "Project Manager",
+                ["Enums.Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Domain.Designation.TechLead"] = "Tech Lead",
+                ["Enums.Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Domain.Designation.SeniorSoftwareEngineer"] = "Senior Software Engineer",
+                ["Enums.Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Domain.Designation.AssociateSoftwareEngineer"] = "Associate Software Engineer",
+               
             });
 
             var bsEmployeeScheduleTask = new ScheduleTask()

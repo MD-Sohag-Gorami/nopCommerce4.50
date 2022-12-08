@@ -101,18 +101,23 @@
                                 },
                                 new ColumnProperty(nameof(EmployeeModel.EmployeeName))
                                 {
-                                    Title = T("Plugins.Widgets.Employee.Admin.Fields.EmployeeName").Text
+                                    Title = T("Plugins.Widgets.Employee.Admin.Fields.EmployeeName").Text,
+                                    ClassName =  NopColumnClassDefaults.CenterAll,
                                 },
                                  new ColumnProperty(nameof(EmployeeModel.EmployeeBsId))
                                 {
-                                    Title = T("Plugins.Widgets.Employee.Admin.Fields.EmployeeBsId").Text
+                                    Title = T("Plugins.Widgets.Employee.Admin.Fields.EmployeeBsId").Text,
+                                    Width = "180",
+                                    ClassName =  NopColumnClassDefaults.CenterAll,
+                                    
                                 },
-                                new ColumnProperty(nameof(EmployeeModel.Designation))
+                                 new ColumnProperty(nameof(EmployeeModel.Designation))
                                 {
                                     Title = T("Plugins.Widgets.Employee.Admin.Fields.EmployeeDesignation").Text,
-                                    Width = "150",
-                                    ClassName =  NopColumnClassDefaults.CenterAll
+                                    ClassName =  NopColumnClassDefaults.CenterAll,
                                 },
+                                
+                               
                                 new ColumnProperty(nameof(EmployeeModel.Id))
                                 {
                                     Title = T("Admin.Common.Edit").Text,

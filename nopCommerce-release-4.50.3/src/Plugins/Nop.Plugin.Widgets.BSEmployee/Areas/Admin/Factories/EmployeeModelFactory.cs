@@ -8,6 +8,7 @@ using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Domain;
 using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Models;
 using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services;
 using Nop.Services;
+using Nop.Services.Localization;
 using Nop.Web.Areas.Admin.Infrastructure.Mapper.Extensions;
 using Nop.Web.Framework.Models.Extensions;
 
@@ -17,11 +18,14 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Factories
     {
         #region Ctor
         private readonly IEmployeeService _employeeService;
+        private readonly ILocalizationService _localizationService;
         #endregion
         #region Ctor
-        public EmployeeModelFactory(IEmployeeService employeeService)
+        public EmployeeModelFactory(IEmployeeService employeeService,
+                                    ILocalizationService localizationService)
         {
             _employeeService = employeeService;
+            _localizationService = localizationService;
         }
         #endregion
         #region Methods
@@ -103,8 +107,9 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Factories
                         Id = employee.Id,
                         EmployeeName = employee.EmployeeName,
                         EmployeeBsId = employee.EmployeeBsId,
-                        Designation = employee.Designation.ToString(),
-
+                        /*Designation = employee.Designation.ToString(),*/
+                        Designation = await _localizationService.GetLocalizedEnumAsync((Designation)employee.DesignationId),
+                       
 
                     };
 
