@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Domain;
 using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Factories;
 using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Models;
 using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services;
+using Nop.Services;
 using Nop.Services.Security;
 using Nop.Web.Areas.Admin.Controllers;
 using Nop.Web.Areas.Admin.Infrastructure.Mapper.Extensions;
@@ -57,7 +59,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
         {
             //prepare model
             var model = await _employeeModelFactory.PrepareEmployeeModelAsync(new EmployeeModel(), null);
-            ;
+            
 
             return View("~/Plugins/Widgets.BSEmployee/Areas/Admin/Views/BSEmployee/Create.cshtml", model);
 
@@ -81,9 +83,27 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
 
                 await _employeeService.InsertEmployeeAsync(employee);
 
+                return RedirectToAction("List");
 
             }
-            return RedirectToAction("List");
+
+
+            // ekta filed error value assing korar pore selectlist na thakar karone againg selectlist create kora
+            var availableDesignation = (await Designation.ProjectManager.ToSelectListAsync(false)).Select(x => new SelectListItem()
+            {
+                Text = x.Text,
+                Value = x.Value,
+            }).ToList();
+
+            availableDesignation.Insert(0, new SelectListItem()
+            {
+                Text = "All",
+                Value = ""
+            });
+            model.AvailableDesignation = availableDesignation;
+           
+            return View("~/Plugins/Widgets.BSEmployee/Areas/Admin/Views/BSEmployee/Create.cshtml", model);
+
         }
         [HttpPost]
         public async Task<IActionResult> Delete(int id)

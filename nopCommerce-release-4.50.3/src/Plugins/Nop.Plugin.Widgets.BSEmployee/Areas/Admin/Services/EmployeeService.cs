@@ -83,6 +83,14 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services
 
             // return await employeeQuery.OrderBy(_localizedPropertyRepository, await _workContext.GetWorkingLanguageAsync(), orderBy).ToPagedListAsync(pageIndex, pageSize);
         }
+
+        public async Task<bool> ValidateEmployeeBsIdUniqueAsync(string bsId, int employeeId)
+        {
+            var employeeQuery = _employeeRepository.Table;
+            var resutl = employeeQuery.Where(x => x.EmployeeBsId.Equals(bsId)).ToList();
+            if(resutl.Count > 0) return false;
+            return true;
+        }
         #endregion
 
     }

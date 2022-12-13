@@ -71,6 +71,7 @@ namespace Nop.Plugin.Widgets.BSEmployee
                 ["Plugins.Widgets.Employee.EmployeeName.Hint"] = "The Employee Name",
                 ["Plugins.Widgets.Employee.EmployeeBSId"] = "BS Id",
                 ["Plugins.Widgets.Employee.EmployeeBSId.Hint"] = "BS Employeee BSId",
+                ["Plugins.Widgets.Employee.EmployeeAge"] = "Employee Age",
                 ["Plugins.Widgets.Employee.EmployeeDesingation"] = "Designation",
                 ["Plugins.Widgets.Employee.EmployeeDesingation.Hint"] = "The BS Employee Designation",
                 ["Plugins.Widgets.Employee.Admin.EmployeeList.PageTitle"] = "BS Employee",

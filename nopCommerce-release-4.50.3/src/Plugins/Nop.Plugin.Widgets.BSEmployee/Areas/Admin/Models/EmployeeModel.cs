@@ -29,6 +29,9 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Models
         [NopResourceDisplayName("Plugins.Widgets.Employee.EmployeeDesingation")]
         public string  Designation { get; set; }
 
+        [NopResourceDisplayName("Plugins.Widgets.Employee.EmployeeAge")]
+        public int EmployeeAge { get; set; } 
+
 
     }
 }

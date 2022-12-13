@@ -18,5 +18,6 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services
             string employeeName = "", int pageIndex = 0, int pageSize = int.MaxValue
 
            );
+        Task<bool> ValidateEmployeeBsIdUniqueAsync(string bsId, int employeeId);
     }
 }
