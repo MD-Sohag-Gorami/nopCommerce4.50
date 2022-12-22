@@ -22,6 +22,7 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Validators
             RuleFor(model => model.EmployeeName)
                 .NotEmpty()
                 .WithMessage("Kichu ekta lekhe jan dada !!!");
+
             RuleFor(model => model.EmployeeBsId)
                 .NotEmpty()
                 .WithMessage("BS ID na diya koi jan ? !!!");
