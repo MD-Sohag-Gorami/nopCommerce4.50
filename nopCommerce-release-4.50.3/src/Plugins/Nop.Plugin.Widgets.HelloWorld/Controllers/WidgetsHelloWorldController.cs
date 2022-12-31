@@ -13,6 +13,7 @@ namespace Nop.Plugin.Widgets.HelloWorld.Controllers
         public async Task<IActionResult> Index()
         {
             var componentName = "Widgets.HelloWorld";
+
             return View("~/Plugins/Widgets.HelloWorld/Views/Index.cshtml", componentName);
         }
     }

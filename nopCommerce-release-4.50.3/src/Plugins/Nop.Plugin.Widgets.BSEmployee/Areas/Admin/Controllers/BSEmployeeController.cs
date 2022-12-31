@@ -8,7 +8,7 @@ using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Domain;
 using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Factories;
 using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Models;
 using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services;
-using Nop.Services.Security;
+
 using Nop.Web.Areas.Admin.Controllers;
 using Nop.Web.Areas.Admin.Infrastructure.Mapper.Extensions;
 using Nop.Web.Framework.Mvc.Filters;
@@ -19,16 +19,16 @@ namespace Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Controllers
     {
         #region Fields
         private readonly IEmployeeModelFactory _employeeModelFactory;
-        private readonly IPermissionService _permissionService;
+       
         private readonly IEmployeeService _employeeService;
         #endregion
         #region Ctor
         public BSEmployeeController(IEmployeeModelFactory employeeModelFactory,
-                                    IPermissionService permissionService,
+                                   
                                     IEmployeeService employeeService)
         {
             _employeeModelFactory = employeeModelFactory;
-            _permissionService = permissionService;
+            
 
             _employeeService = employeeService;
         }
