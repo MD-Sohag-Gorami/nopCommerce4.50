@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Domain;
 using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Models;
 using Nop.Plugin.Widgets.BSEmployee.Areas.Admin.Services;
-using Nop.Services;
 using Nop.Services.Localization;
 using Nop.Web.Areas.Admin.Infrastructure.Mapper.Extensions;
 using Nop.Web.Framework.Models.Extensions;

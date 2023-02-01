@@ -12,25 +12,25 @@ namespace Nop.Plugin.Payments.FlexiCards.Areas.Admin.Models
     {
         public int ActiveStoreScopeConfiguration { get; set; }
 
-        [NopResourceDisplayName("Plugins.Payments.QCardPayment.Fields.UseSandbox")]
+        [NopResourceDisplayName("Plugins.Payments.FlexiCards.Fields.UseSandbox")]
         public bool UseSandbox { get; set; }
         public bool UseSandbox_OverrideForStore { get; set; }
-        [NopResourceDisplayName("Plugins.Payments.QCardPayment.Fields.MerchantId")]
+        [NopResourceDisplayName("Plugins.Payments.FlexiCards.Fields.MerchantId")]
         public string MerchantId { get; set; }
         public bool MerchantId_OverrideForStore { get; set; }
-        [NopResourceDisplayName("Plugins.Payments.QCardPayment.Fields.LoginId")]
+        [NopResourceDisplayName("Plugins.Payments.FlexiCards.Fields.LoginId")]
         public string LoginId { get; set; }
         public bool LoginId_OverrideForStore { get; set; }
-        [NopResourceDisplayName("Plugins.Payments.QCardPayment.Fields.Password")]
+        [NopResourceDisplayName("Plugins.Payments.FlexiCards.Fields.Password")]
         public string Password { get; set; }
         public bool Password_OverrideForStore { get; set; }
-        [NopResourceDisplayName("Plugins.Payments.QCardPayment.Fields.ApiKey")]
+        [NopResourceDisplayName("Plugins.Payments.FlexiCards.Fields.ApiKey")]
         public string ApiKey { get; set; }
         public bool ApiKey_OverrideForStore { get; set; }
-        [NopResourceDisplayName("Plugins.Payments.QCardPayment.Fields.AdditionalFee")]
+        [NopResourceDisplayName("Plugins.Payments.FlexiCards.Fields.AdditionalFee")]
         public decimal AdditionalFee { get; set; }
         public bool AdditionalFee_OverrideForStore { get; set; }
-        [NopResourceDisplayName("Plugins.Payments.QCardPayment.Fields.AdditionalFeePercentage")]
+        [NopResourceDisplayName("Plugins.Payments.FlexiCards.Fields.AdditionalFeePercentage")]
         public bool AdditionalFeePercentage { get; set; }
         public bool AdditionalFeePercentage_OverrideForStore { get; set; }
     }

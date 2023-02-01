@@ -50,7 +50,7 @@ namespace Nop.Plugin.Payments.FlexiCards.Controllers
             var success = int.TryParse(merchant_transaction_id, out var orderId);
             if (!success)
             {
-                await _logger.ErrorAsync("Invalid Order Id(merchant_transaction_id)");
+                await _logger.ErrorAsync($"Invalid Order Id{merchant_transaction_id}");
                 return RedirectToRoute("HomePage");
             }
 

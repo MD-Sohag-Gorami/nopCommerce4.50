@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -54,6 +55,7 @@ namespace Nop.Plugin.Payments.FlexiCards
             _flexiCardsPaymentFactory = flexiCardsPaymentFactory;
         }
         #endregion
+        #region Properties
         public bool SupportCapture => true;
 
         public bool SupportPartiallyRefund => false;
@@ -68,7 +70,8 @@ namespace Nop.Plugin.Payments.FlexiCards
 
         public bool SkipPaymentInfo => false;
 
-
+        #endregion
+        #region Methods
         public Task<CancelRecurringPaymentResult> CancelRecurringPaymentAsync(CancelRecurringPaymentRequest cancelPaymentRequest)
         {
                 return Task.FromResult(new CancelRecurringPaymentResult());
@@ -112,7 +115,7 @@ namespace Nop.Plugin.Payments.FlexiCards
         public string GetPublicViewComponentName()
         {
             return "FlexiCards";
-            ;
+            
         }
 
         public Task<bool> HidePaymentMethodAsync(IList<ShoppingCartItem> cart)
@@ -223,7 +226,7 @@ namespace Nop.Plugin.Payments.FlexiCards
 
         }
 
-        public async Task UninstallAsync()
+        public  async  Task UninstallAsync()
         {
             await _settingService.DeleteSettingAsync<FlexiCardsPaymentSettings>();
 
@@ -248,5 +251,6 @@ namespace Nop.Plugin.Payments.FlexiCards
             return Task.FromResult(new VoidPaymentResult { Errors = new[] { "Void method not supported" } });
 
         }
+        #endregion
     }
 }

@@ -69,12 +69,12 @@ namespace Nop.Plugin.Payments.FlexiCards.Factories
 
         public List<string> PrepareFlexiCardsProducts()
         {
-            var qCardProducts = new List<string>()
+            var flexiCardsProducts = new List<string>()
             {
                 "Post payment method test",
                 "Post payment method identify"
             };
-            return qCardProducts;
+            return flexiCardsProducts;
         }
         public string PrepareFlexiCardsPaymentStatusQueryString(string requestUrl, PaymentStatusRequest requestBody)
         {
