@@ -8,11 +8,13 @@ using Nop.Web.Framework.Components;
 
 namespace Nop.Plugin.Payments.FlexiCards.Components
 {
+    [ViewComponent(Name = "FlexiCardsPayment")]
     public class FlexiCardsPaymentViewComponent : NopViewComponent
     {
         public IViewComponentResult Invoke()
         {
             return View("~/Plugins/Payments.FlexiCards/Views/PaymentInfo.cshtml");
+            
         }
     }
     

@@ -114,7 +114,7 @@ namespace Nop.Plugin.Payments.FlexiCards
 
         public string GetPublicViewComponentName()
         {
-            return "FlexiCards";
+            return "FlexiCardsPayment";
             
         }
 
@@ -151,7 +151,7 @@ namespace Nop.Plugin.Payments.FlexiCards
                 ["Plugins.Payments.FlexiCards.Fields.AdditionalFee.Hint"] = "Enter additional fee to charge your customers.",
                 ["Plugins.Payments.FlexiCards.Fields.AdditionalFeePercentage"] = "Additional fee. Use percentage",
                 ["Plugins.Payments.FlexiCards.Fields.AdditionalFeePercentage.Hint"] = "Determines whether to apply a percentage additional fee to the order total. If not enabled, a fixed value is used.",
-                ["Plugins.Payments.FlexiCards.PaymentMethodDescription"] = "Pay with flexi  Cards",
+                ["Plugins.Payments.FlexiCardsPayment.PaymentMethodDescription"] = "Pay with flexi  Cards",
             });
             await base.InstallAsync();
         }

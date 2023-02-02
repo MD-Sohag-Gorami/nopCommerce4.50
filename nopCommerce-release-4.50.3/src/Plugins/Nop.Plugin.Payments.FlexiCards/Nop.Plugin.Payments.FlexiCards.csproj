@@ -14,8 +14,12 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Areas\Admin\Views\FlexiCards\Configure.cshtml" />
+    <None Remove="Areas\Admin\Views\FlexiCards\_ViewImports.cshtml" />
+    <None Remove="Areas\Admin\Views\FlexiCards\_ViewStart.cshtml" />
     <None Remove="logo.jpg" />
     <None Remove="Plugin.json" />
+    <None Remove="Views\PaymentInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Presentation\Nop.Web.Framework\Nop.Web.Framework.csproj" />
@@ -23,17 +27,28 @@
     <ClearPluginAssemblies Include="$(MSBuildProjectDirectory)\..\..\Build\ClearPluginAssemblies.proj" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Views\FlexiCards\Configure.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Admin\Views\FlexiCards\_ViewImports.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Admin\Views\FlexiCards\_ViewStart.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="logo.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Plugin.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\PaymentInfo.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Views\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <!-- This target execute after "Build" target -->
