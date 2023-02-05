@@ -35,7 +35,7 @@ namespace Nop.Plugin.Payments.FlexiCards.Areas.Admin.Controllers
         }
         #endregion
         #region Methods
-        public async Task<IActionResult> Congfiure()
+        public async Task<IActionResult> Configure()
         {
 
             var storeScope = await _storeContext.GetActiveStoreScopeConfigurationAsync();
@@ -50,7 +50,6 @@ namespace Nop.Plugin.Payments.FlexiCards.Areas.Admin.Controllers
                 ApiKey = settings.ApiKey,
                 AdditionalFee = settings.AdditionalFee,
                 AdditionalFeePercentage = settings.AdditionalFeePercentage,
-
                 ActiveStoreScopeConfiguration = storeScope
             };
 
@@ -65,10 +64,10 @@ namespace Nop.Plugin.Payments.FlexiCards.Areas.Admin.Controllers
                 model.AdditionalFeePercentage_OverrideForStore = await _settingService.SettingExistsAsync(settings, x => x.AdditionalFeePercentage, storeScope);
             }
 
-            return View("~/Plugins/Payments.FlexiCards/Areas/Admin/Views/FlexiCards/Configure.cshtml",model);
+            return View("~/Plugins/Payment.FlexiCards/Areas/Admin/Views/FlexiCards/Configure.cshtml",model);
         }
         [HttpPost]
-        public async Task<IActionResult> Congfiure(FlexiCardsPaymentConfigureModel model)
+        public async Task<IActionResult> Configure(FlexiCardsPaymentConfigureModel model)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +94,7 @@ namespace Nop.Plugin.Payments.FlexiCards.Areas.Admin.Controllers
 
                 _notificationService.SuccessNotification(await _localizationService.GetResourceAsync("Admin.Plugins.Saved"));
             }
-            return View("~/Plugins/Payments.FlexiCards/Areas/Admin/Views/FlexiCards/Configure.cshtml", model);
+            return View("~/Plugins/Payment.FlexiCards/Areas/Admin/Views/FlexiCards/Configure.cshtml", model);
         }
         #endregion
     }

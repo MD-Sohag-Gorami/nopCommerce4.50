@@ -2,9 +2,10 @@
 @inject Nop.Services.Common.IGenericAttributeService genericAttributeService
 @inject Nop.Services.Stores.IStoreService storeService
 @inject IWorkContext workContext
+@inject INopHtmlHelper NopHtml
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper *, Nop.Web.Framework
-
+@using Nop.Plugin.Payments.FlexiCards.Areas.Admin.Models
 @using Microsoft.AspNetCore.Mvc.ViewFeatures
 @using Microsoft.AspNetCore.Routing
 @using Nop.Core

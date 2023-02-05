@@ -13,7 +13,7 @@ namespace Nop.Plugin.Payments.FlexiCards.Components
     {
         public IViewComponentResult Invoke()
         {
-            return View("~/Plugins/Payments.FlexiCards/Views/PaymentInfo.cshtml");
+            return View("~/Plugins/Payment.FlexiCards/Views/PaymentInfo.cshtml");
             
         }
     }

@@ -99,6 +99,7 @@ namespace Nop.Plugin.Payments.FlexiCards
         public string GetConfigurationPageUrl()
         {
             return $"{_webHelper.GetStoreLocation()}Admin/FlexiCards/Configure";
+            
         }
 
         public Task<ProcessPaymentRequest> GetPaymentInfoAsync(IFormCollection form)
